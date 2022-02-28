@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComponentTestController;
+use App\Http\Controllers\LifeCycleTestController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+/*********************************
+	test
+*********************************/
+Route::get('/component-test1', [ComponentTestController::class, 'showComponent1']);
+Route::get('/component-test2', [ComponentTestController::class, 'showComponent2']);
+/*********************************
+	servicecontainertest
+*********************************/
+Route::get('/servicecontainertest', [LifeCycleTestController::class, 'showServiceContainerTest']);
+/*********************************
+	serviceprovidertest
+*********************************/
+Route::get('/serviceprovidertest', [LifeCycleTestController::class, 'showServiceProviderTest']);
+require __DIR__.'/auth.php';
