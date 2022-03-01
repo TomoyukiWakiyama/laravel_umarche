@@ -17,12 +17,15 @@ use App\Http\Controllers\LifeCycleTestController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.welcome');
 });
 
+/*********************************
+	breez
+*********************************/
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return view('user.dashboard');
+})->middleware(['auth:users'])->name('dashboard');
 
 /*********************************
 	test
