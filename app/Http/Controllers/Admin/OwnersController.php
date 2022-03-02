@@ -4,11 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Owner; // エロクアント
+use Illuminate\Support\Facades\DB; // Queryビルダー
+use Carbon\Carbon;
+
 
 class OwnersController extends Controller
 {
     public function __construct()
     {
+        // admin認証のミドルウェアを差し込む
         $this->middleware('auth:admin');
     }
     /**
@@ -19,7 +24,16 @@ class OwnersController extends Controller
     public function index()
     {
         //
-        dd('ログイン成功');
+        $data_now = Carbon::now();
+        $data_parse = Carbon::parse(now());
+        echo $data_now->year . '<br>';
+        echo $data_parse . '<br>';
+
+        $e_all = Owner::all(); // eloquent
+        $q_get = DB::table('owners')->select('name', 'created_at')->get();
+        // $q_first = DB::table('owners')->select('name')->first();
+
+        return view('admin.onwers.index', compact('e_all', 'q_get'));
     }
 
     /**
