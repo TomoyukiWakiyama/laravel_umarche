@@ -38,7 +38,7 @@ class OwnersController extends Controller
         // $q_first = DB::table('owners')->select('name')->first();
 
         $owners = Owner::select('id', 'name', 'email', 'created_at')
-            ->paginate(1);
+            ->paginate(5);
         return view('admin.owners.index', compact('owners'));
     }
 

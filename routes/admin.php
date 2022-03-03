@@ -24,15 +24,16 @@ use App\Http\Controllers\Admin\OwnersController;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.welcome');
-});
+// Route::get('/', function () {
+//     return view('admin.welcome');
+// });
 
 /*********************************
 	resources
 *********************************/
 Route::resource('owners',OwnersController::class)
-    ->middleware(['auth:admin']);
+    ->middleware(['auth:admin'])
+    ->except(['show']);
 
 /*********************************
 	機嫌切れオーナー
