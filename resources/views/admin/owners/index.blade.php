@@ -47,6 +47,8 @@
                                 @endforeach
                               </tbody>
                             </table>
+                            <!-- paginate -->
+                            {{$owners->links()}}
                           </div>
                         </div>
                       </section>
