@@ -9,10 +9,15 @@ class ImageService
 {
     public static function Upload($imageFile, $folderName)
     {
+        if(is_array($imageFile)){
+            $file = $imageFile['image'];
+        } else {
+            $file = $imageFile;
+        }
         $fileName = uniqid(rand() . '_');
-        $extention = $imageFile->extension(); //拡張子の取得
+        $extention = $file->extension(); //拡張子の取得
         $fileNameToStore = $fileName . '.' . $extention;
-        $resizedImage = InterventionImage::make($imageFile)
+        $resizedImage = InterventionImage::make($file)
                         ->resize(1920, 1080)
                         ->encode();
 
