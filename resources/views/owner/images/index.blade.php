@@ -11,26 +11,25 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <!-- フラッシュメッセージ -->
                     <x-flash-message status="session('status')" />
-                    @foreach ($shops as $shop)
-                        <div class="w-1/2 p-4">
-                            <a href="{{route('owner.shops.edit', ['shop' => $shop->id])}}">
+                    <div class="flex justify-end mb-4">
+                        <button onclick="location.href='{{route('owner.images.index')}}'" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録</button>
+                    </div>
+                    @foreach ($images as $image)
+                        <div class="w-1/4 p-4">
+                            <a href="{{route('owner.images.edit', ['image' => $image->id])}}">
                                 <div class="border rounded-md p-4">
                                     <div class="mb-4">
-                                        @if ($shop->is_selling)
-                                            販売中
-                                        @else
-                                            停止中
-                                        @endif
                                         <div class="text-xl">
-                                            {{ $shop->name }}
+                                            {{ $image->title }}
                                         </div>
                                         <!-- サムネイルコンポーネント -->
-                                        <x-thumbnail :fileName="$shop->filename" type="shops" />
+                                        <x-thumbnail :fileName="$shop->filename" type="products" />
                                     </div>
                                 </div>
                             </a>
                         </div>
                     @endforeach
+                    {{ $images->link()}}
                 </div>
             </div>
         </div>
