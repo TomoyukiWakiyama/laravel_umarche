@@ -702,12 +702,6 @@ select {
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-.mr-1 {
-  margin-right: 0.25rem;
-}
 .block {
   display: block;
 }
@@ -1570,6 +1564,10 @@ select {
 
   .md\:border-l {
     border-left-width: 1px;
+  }
+
+  .md\:p-4 {
+    padding: 1rem;
   }
 }
 @media (min-width: 1024px) {
