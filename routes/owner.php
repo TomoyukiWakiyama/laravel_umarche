@@ -31,9 +31,9 @@ use Illuminate\Support\Facades\Route;
 /*********************************
 	routes
 *********************************/
-Route::get('/', function () {
-    return view('owner.welcome');
-});
+// Route::get('/', function () {
+//     return view('owner.welcome');
+// });
 
 /*********************************
 	shops
@@ -73,11 +73,11 @@ Route::get('/dashboard', function () {
 /*********************************
 	authの内容を直書きでコピペ
 *********************************/
-Route::middleware('guest')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])
-                ->name('register');
+// Route::middleware('guest')->group(function () {
+//     Route::get('register', [RegisteredUserController::class, 'create'])
+//                 ->name('register');
 
-    Route::post('register', [RegisteredUserController::class, 'store']);
+//     Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
