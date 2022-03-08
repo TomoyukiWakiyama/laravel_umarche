@@ -230,5 +230,12 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+
+        // 画像情報をテーブルから削除
+        Product::findOrFail($id)->delete();
+        return redirect()
+            ->route('owner.products.index')
+            ->with(['message' => '商品を削除しました',
+                     'status'=>'alert']);
     }
 }
