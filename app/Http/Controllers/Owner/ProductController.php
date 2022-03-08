@@ -15,6 +15,7 @@ use App\Models\Stock;
 use Throwable;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\ProductRequest;
+use App\Constants\Common;
 
 
 
@@ -192,9 +193,10 @@ class ProductController extends Controller
                 $product->save();
 
                 /* Quantity */
-                if($request->type === '1'){
+                if($request->type === Common::PRODUCT_LIST['add']){
                     $newQuantity = $request->quantity;
-                } elseif($request->type === '2'){
+                }
+                if($request->type === Common::PRODUCT_LIST['reduce']){
                     $newQuantity = $request->quantity * -1;
                 }
                 Stock::create([
