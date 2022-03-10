@@ -20,15 +20,14 @@ class ShopSheeder extends Seeder
                 'owner_id' => 1,
                 'name' => 'ShopName1',
                 'information' => 'Shopinformation1',
-                'filename' => '',
+                'filename' => 'sample1.jpg',
                 'is_selling' => true,
             ],
             [
                 'owner_id' => 2,
                 'name' => 'ShopName2',
                 'information' => 'Shopinformation2',
-                'filename' => '',
-                'filename' => 'ShopName1',
+                'filename' => 'sample2.jpg',
                 'is_selling' => true,
             ],
         ]);
