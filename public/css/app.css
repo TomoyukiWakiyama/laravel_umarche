@@ -799,11 +799,11 @@ select {
 .w-32 {
   width: 8rem;
 }
-.w-10 {
-  width: 2.5rem;
-}
 .w-40 {
   width: 10rem;
+}
+.w-10 {
+  width: 2.5rem;
 }
 .max-w-7xl {
   max-width: 80rem;

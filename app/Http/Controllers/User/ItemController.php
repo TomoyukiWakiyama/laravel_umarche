@@ -43,9 +43,6 @@ class ItemController extends Controller
                     ,'image1.filename as filename')
                     ->get();
 
-            
-
-        
         return view('user.index', compact('products'));
     }
 
