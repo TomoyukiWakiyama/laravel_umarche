@@ -28,7 +28,10 @@
                                 </div>
 
                                 <div class="md:w-2/12">
-                                    
+                                    <form action="{{route('user.cart.delete', ['item'=>$product->id])}}" method="post">
+                                        @csrf
+                                        <button type="submit">カートから削除する</button>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach

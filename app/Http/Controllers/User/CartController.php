@@ -24,6 +24,7 @@ class CartController extends Controller
                 compact('products', 'totalPrice'));
 
     }
+
     public function add(Request $request)
     {
         $itemInCart = Cart::where('user_id', Auth::id())
@@ -41,6 +42,15 @@ class CartController extends Controller
             ]);
         }
         
+        return redirect()->route('user.cart.index');
+    }
+
+    public function delete($id)
+    {
+        Cart::where('product_id', $id)
+            ->where('user_id', Auth::id())
+            ->delete();
+
         return redirect()->route('user.cart.index');
     }
 }
