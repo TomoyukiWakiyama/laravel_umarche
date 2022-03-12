@@ -42,6 +42,8 @@ Route::prefix('cart')
                 ->name('cart.add');
         Route::post('delete/{item}', [CartController::class, 'delete'])
                 ->name('cart.delete');
+        Route::get('checkout', [CartController::class, 'checkout'])
+                ->name('cart.checkout');
     });
 
 /*********************************

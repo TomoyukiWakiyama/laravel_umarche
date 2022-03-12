@@ -658,6 +658,10 @@ select {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -709,14 +713,14 @@ select {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .mt-6 {
   margin-top: 1.5rem;
 }
 .mr-3 {
   margin-right: 0.75rem;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 .block {
   display: block;
@@ -1741,10 +1745,6 @@ select {
 }
 @media (min-width: 768px) {
 
-  .md\:ml-12 {
-    margin-left: 3rem;
-  }
-
   .md\:ml-2 {
     margin-left: 0.5rem;
   }
@@ -1757,14 +1757,6 @@ select {
     width: 66.666667%;
   }
 
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
-  .md\:w-1\/12 {
-    width: 8.333333%;
-  }
-
   .md\:w-3\/12 {
     width: 25%;
   }
@@ -1775,6 +1767,10 @@ select {
 
   .md\:w-2\/12 {
     width: 16.666667%;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
   }
 
   .md\:grid-cols-2 {
